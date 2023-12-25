@@ -28,6 +28,7 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     // await client.connect();
     const taskCollection = client.db("gamersGrid").collection("tasks");
+    const gamerCollection = client.db("gamersGrid").collection("gamers");
 
     // jwt related api
     app.post("/jwt", async (req, res) => {
@@ -56,6 +57,12 @@ async function run() {
         const result = await taskCollection.deleteOne(query);
         res.send(result); 
     })
+
+    // gamers related api 
+    app.get("/gamers", async(req, res) => {
+        const result = await gamerCollection.find().toArray();
+        res.send(result);
+      })
     
     
     // Send a ping to confirm a successful connection
