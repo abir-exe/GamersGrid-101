@@ -68,7 +68,6 @@ async function run() {
       // guild related api
       app.get("/guilds", async(req, res) => {
         const result = await guildCollection.find().toArray();
-        console.log(result)
         res.send(result);
       })
     
