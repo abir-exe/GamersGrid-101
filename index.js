@@ -64,7 +64,13 @@ async function run() {
         const result = await gamerCollection.find().toArray();
         res.send(result);
       })
-    
+
+      // guild related api
+      app.get("/guilds", async(req, res) => {
+        const result = await guildCollection.find().toArray();
+        console.log(result)
+        res.send(result);
+      })
     
     // Send a ping to confirm a successful connection
     // await client.db("admin").command({ ping: 1 });
