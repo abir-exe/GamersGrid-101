@@ -29,6 +29,7 @@ async function run() {
     // await client.connect();
     const taskCollection = client.db("gamersGrid").collection("tasks");
     const gamerCollection = client.db("gamersGrid").collection("gamers");
+    const guildCollection = client.db("gamersGrid").collection("guilds");
 
     // jwt related api
     app.post("/jwt", async (req, res) => {
