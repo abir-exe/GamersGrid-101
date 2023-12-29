@@ -70,7 +70,7 @@ async function run() {
         const result = await guildCollection.find().toArray();
         res.send(result);
       })
-    
+     
     // Send a ping to confirm a successful connection
     // await client.db("admin").command({ ping: 1 });
     console.log("Pinged GamersGrid. GamersGrid is successfully connected to MongoDB!");
